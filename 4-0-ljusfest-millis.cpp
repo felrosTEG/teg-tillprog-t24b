@@ -14,6 +14,7 @@ int time_gap = 1000; // Hur långt vi vill att det ska vara mellan blinkningar
 int num_LED = 4; // Hur många LED vi har
 
 void setup(){
+  Serial.begin(115200);
   for(int i = 0;i<num_LED;i++){
     pinMode(LED_array[i], OUTPUT); // Sätter alla pinnar som vi ska använda till output
   }
