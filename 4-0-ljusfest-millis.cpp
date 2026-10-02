@@ -6,7 +6,6 @@
 #define LED3 4
 #define LED4 5
 
-
 int LED_array[4] = {LED1,LED2,LED3,LED4}; // Lista med alla LED
 int LED_counter = 0; // Håller koll på vilken LED som ska blinka
 int last_update = 0; // När vi senast uppdaterade, dvs när vi senast blinkade en LED
@@ -18,9 +17,7 @@ void setup(){
   for(int i = 0;i<num_LED;i++){
     pinMode(LED_array[i], OUTPUT); // Sätter alla pinnar som vi ska använda till output
   }
-
 }
-
 
 void loop(){
   if(millis() - last_update > time_gap){ // Om det har gått mer än 1 sekund sedan vi senast blinkade
