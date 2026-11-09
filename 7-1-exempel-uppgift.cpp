@@ -1,5 +1,6 @@
 /*
-En grön lysdiod sitter på pinne 7 och en knapp sitter på pinne 11. Knappen är kopplad till GND, så ställ in den med INPUT_PULLUP. Då ger digitalRead värdet LOW när knappen är nedtryckt.
+En grön lysdiod sitter på pinne 7 och en knapp sitter på pinne 11. Knappen är kopplad till GND,
+så ställ in den med INPUT_PULLUP. Då ger digitalRead värdet LOW när knappen är nedtryckt.
 
 Skriv ett program som fungerar som en trappbelysning.
 
@@ -24,13 +25,13 @@ const unsigned long lystid = 3000;  // Lystid i millisekunder (3 sekunder)
 
 void setup() {
   pinMode(ledPin, OUTPUT);
-  digitalWrite(ledPin, LOW); // LED är släckt från början
+  digitalWrite(ledPin, ledState); // LED är släckt från början
   pinMode(knappPin, INPUT_PULLUP);
 }
 
 void loop() {
   // 1. Om knappen trycks ned (LOW) och lysdioden inte redan är tänd
-  if (digitalRead(knappPin) == LOW && ledState != LOW) {
+  if (digitalRead(knappPin) == LOW && ledState == LOW) {
     
     // Debouncer
     delay(50); 
